@@ -206,6 +206,39 @@ app.use(function(req, res, next) {
 
 //now  we can set the route path & initialize the API
 router.get('/', function(req, res) {
+  var vi = setInterval(()=>{
+    turnOn1()
+  }, 2400)
+
+
+  // Stop blinking the LED and turn it off after 5 seconds.
+  setTimeout(function() {
+      clearInterval(vi)
+      led1.writeSync(0);  // Turn LED off.
+      led1.unexport();    // Unexport GPIO and free resources
+      led2.writeSync(0);  // Turn LED off.
+      led2.unexport();    // Unexport GPIO and free resources
+      led3.writeSync(0);  // Turn LED off.
+      led3.unexport();    // Unexport GPIO and free resources
+      led4.writeSync(0);  // Turn LED off.
+      led4.unexport();    // Unexport GPIO and free resources
+      led5.writeSync(0);  // Turn LED off.
+      led5.unexport();    // Unexport GPIO and free resources
+      led6.writeSync(0);  // Turn LED off.
+      led6.unexport();    // Unexport GPIO and free resources
+      led7.writeSync(0);  // Turn LED off.
+      led7.unexport();    // Unexport GPIO and free resources
+      led8.writeSync(0);  // Turn LED off.
+      led8.unexport();    // Unexport GPIO and free resources
+      led9.writeSync(0);  // Turn LED off.
+      led9.unexport();    // Unexport GPIO and free resources
+      led10.writeSync(0);  // Turn LED off.
+      led10.unexport();    // Unexport GPIO and free resources
+      led11.writeSync(0);  // Turn LED off.
+      led11.unexport();    // Unexport GPIO and free resources
+      led12.writeSync(0);  // Turn LED off.
+      led12.unexport();    // Unexport GPIO and free resources
+  }, 12000)
   res.json({ message: 'API Initialized!'});
 });
 
@@ -269,37 +302,4 @@ app.use('/api', router);
 //starts the server and listens for requests
 app.listen(port, function() {
   console.log(`api running on port ${port}`);
-  var vi = setInterval(()=>{
-    turnOn1()
-  }, 2400)
-
-
-  // Stop blinking the LED and turn it off after 5 seconds.
-  setTimeout(function() {
-      clearInterval(vi)
-      led1.writeSync(0);  // Turn LED off.
-      led1.unexport();    // Unexport GPIO and free resources
-      led2.writeSync(0);  // Turn LED off.
-      led2.unexport();    // Unexport GPIO and free resources
-      led3.writeSync(0);  // Turn LED off.
-      led3.unexport();    // Unexport GPIO and free resources
-      led4.writeSync(0);  // Turn LED off.
-      led4.unexport();    // Unexport GPIO and free resources
-      led5.writeSync(0);  // Turn LED off.
-      led5.unexport();    // Unexport GPIO and free resources
-      led6.writeSync(0);  // Turn LED off.
-      led6.unexport();    // Unexport GPIO and free resources
-      led7.writeSync(0);  // Turn LED off.
-      led7.unexport();    // Unexport GPIO and free resources
-      led8.writeSync(0);  // Turn LED off.
-      led8.unexport();    // Unexport GPIO and free resources
-      led9.writeSync(0);  // Turn LED off.
-      led9.unexport();    // Unexport GPIO and free resources
-      led10.writeSync(0);  // Turn LED off.
-      led10.unexport();    // Unexport GPIO and free resources
-      led11.writeSync(0);  // Turn LED off.
-      led11.unexport();    // Unexport GPIO and free resources
-      led12.writeSync(0);  // Turn LED off.
-      led12.unexport();    // Unexport GPIO and free resources
-  }, 12000)
 });

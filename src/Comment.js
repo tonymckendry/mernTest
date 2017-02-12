@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import style from './style';
 import marked from 'marked';

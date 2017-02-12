@@ -206,6 +206,7 @@ app.use(function(req, res, next) {
 
 //now  we can set the route path & initialize the API
 router.get('/', function(req, res) {
+  console.log('hit the route')
   var vi = setInterval(()=>{
     turnOn1()
   }, 2400)
